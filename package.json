@@ -1,0 +1,17 @@
+{
+  "name": "vec",
+  "version": "0.1.0",
+  "description": "A minimal set of vector and color functions and structures.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc -p src",
+    "clean": "rm -f *.js *.d.ts"
+  },
+  "keywords": [],
+  "author": "spacejack",
+  "license": "ISC",
+  "devDependencies": {
+    "tslint": "^4.5.1",
+    "typescript": "^2.5.2"
+  }
+}
