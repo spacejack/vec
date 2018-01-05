@@ -1,17 +1,20 @@
 {
   "name": "vec",
   "version": "0.2.0",
-  "description": "A minimal set of vector and color functions and structures.",
+  "description": "Typescript Vector structs and functions",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ts-node --project ./test ./test/test.ts",
     "build": "tsc -p src",
     "clean": "rm -f *.js *.d.ts"
   },
   "keywords": [],
   "author": "spacejack",
   "license": "ISC",
-  "devDependencies": {
-    "tslint": "^4.5.1",
-    "typescript": "^2.6.1"
+  "devDependencies": {},
+  "dependencies": {
+    "ts-node": "^4.1.0",
+    "tslint": "^5.8.0",
+    "tslint-microsoft-contrib": "^5.0.1",
+    "typescript": "^2.6.2"
   }
 }
