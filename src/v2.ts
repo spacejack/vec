@@ -65,7 +65,7 @@ namespace V2 {
 		return v.x * v.x + v.y * v.y
 	}
 
-	export function setLen (out: V2, v: V2, l: number): V2 {
+	export function setLength (out: V2, v: V2, l: number): V2 {
 		let s = length(v)
 		if (s > 0.0) {
 			s = l / s
@@ -80,7 +80,7 @@ namespace V2 {
 	}
 
 	export function normalize (out: V2, v: V2): V2 {
-		return setLen(out, v, 1.0)
+		return setLength(out, v, 1.0)
 	}
 
 	export function dist (a: V2, b: V2): number {
