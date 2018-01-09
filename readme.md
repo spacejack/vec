@@ -18,7 +18,7 @@ import V3 from 'vec/v3'
 // Safely copy from one type to another without type errors
 const a = new CANNON.Vec3(1,2,3)
 const b = new THREE.Vector3()
-V3.copy(v2, v1)
+V3.copy(b, a)
 
 // Create a plain object
 const c = V3.create()
