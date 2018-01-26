@@ -103,6 +103,15 @@ namespace V2 {
 		return a.x * b.y - a.y * b.x
 	}
 
+	export function rotate (out: V2, v: V2, r: number): V2 {
+		const c = Math.cos(r),
+			s = Math.sin(r),
+			x = v.x, y = v.y
+		out.x = x * c - y * s
+		out.y = x * s + y * c
+		return out
+	}
+
 	/** nx,ny should be normalized; vx,vy length will be preserved */
 	export function reflect (out: V2, v: V2, n: V2): V2 {
 		const d = dot(n, v)

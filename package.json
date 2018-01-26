@@ -13,8 +13,8 @@
   "devDependencies": {},
   "dependencies": {
     "ts-node": "^4.1.0",
-    "tslint": "^5.8.0",
-    "tslint-microsoft-contrib": "^5.0.1",
+    "tslint": "^5.9.1",
+    "tslint-microsoft-contrib": "^5.0.2",
     "typescript": "^2.6.2"
   }
 }

@@ -101,6 +101,13 @@ var V2;
         return a.x * b.y - a.y * b.x;
     }
     V2.det = det;
+    function rotate(out, v, r) {
+        var c = Math.cos(r), s = Math.sin(r), x = v.x, y = v.y;
+        out.x = x * c - y * s;
+        out.y = x * s + y * c;
+        return out;
+    }
+    V2.rotate = rotate;
     /** nx,ny should be normalized; vx,vy length will be preserved */
     function reflect(out, v, n) {
         var d = dot(n, v);
