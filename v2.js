@@ -97,10 +97,10 @@ var V2;
         return a.x * b.x + a.y * b.y;
     }
     V2.dot = dot;
-    function det(a, b) {
-        return a.x * b.y - a.y * b.x;
+    function angle(v) {
+        return Math.atan2(v.y, v.x);
     }
-    V2.det = det;
+    V2.angle = angle;
     function rotate(out, v, r) {
         var c = Math.cos(r), s = Math.sin(r), x = v.x, y = v.y;
         out.x = x * c - y * s;

@@ -71,8 +71,7 @@ namespace V2 {
 			s = l / s
 			out.x = v.x * s
 			out.y = v.y * s
-		}
-		else {
+		} else {
 			out.x = l
 			out.y = 0.0
 		}
@@ -99,8 +98,8 @@ namespace V2 {
 		return a.x * b.x + a.y * b.y
 	}
 
-	export function det (a: V2, b: V2): number {
-		return a.x * b.y - a.y * b.x
+	export function angle (v: V2): number {
+		return Math.atan2(v.y, v.x)
 	}
 
 	export function rotate (out: V2, v: V2, r: number): V2 {

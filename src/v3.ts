@@ -81,8 +81,7 @@ namespace V3 {
 			out.x = v.x * s
 			out.y = v.y * s
 			out.z = v.z * s
-		}
-		else {
+		} else {
 			out.x = l
 			out.y = 0.0
 			out.z = 0.0

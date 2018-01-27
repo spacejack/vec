@@ -6,11 +6,13 @@ A Minimal set of vector and color functions and structures. Works standalone or 
 
 Intended to ease type incombatibility issues when using Typescript but also avoids pitfalls of using class methods on objects that may be incompatibile when writing plain JS.
 
-There are advantages to working with arrays instead of structs but structs may feel more user-friendly and may interop more easily with 3rd party libs.
+There are advantages to working with arrays instead of structs (in which case you should use [gl-matrix](https://github.com/toji/gl-matrix)) but structs may feel more user-friendly in an application and may interop more easily with 3rd party libs like [three.js](https://github.com/mrdoob/three.js).
 
 Plain objects may (in some cases) be faster than arrays. Using the `*.create` functions rather than `{...}` may also improve performance as objects of the same shape will be constructed from the same call site.
 
-## Examples:
+Instances of vector structs (or plain arrays) will likely use less memory than typed arrays and are faster to construct. Typed arrays begin to pay off when used in bulk.
+
+## Usage Examples:
 
 ```typescript
 import V3 from 'vec/v3'
@@ -31,3 +33,5 @@ const d = V3.dist(a, b)
 import V2 from 'vec/v2'
 const dXY = V2.dist(a, b)
 ```
+
+Matrix functions are not included since it makes more sense to use those as arrays, which [gl-matrix](https://github.com/toji/gl-matrix) is for.

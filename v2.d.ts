@@ -21,7 +21,7 @@ declare namespace V2 {
     function dist(a: V2, b: V2): number;
     function distSq(a: V2, b: V2): number;
     function dot(a: V2, b: V2): number;
-    function det(a: V2, b: V2): number;
+    function angle(v: V2): number;
     function rotate(out: V2, v: V2, r: number): V2;
     /** nx,ny should be normalized; vx,vy length will be preserved */
     function reflect(out: V2, v: V2, n: V2): V2;
