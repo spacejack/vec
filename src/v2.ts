@@ -118,6 +118,22 @@ namespace V2 {
 		out.y = v.y - 2.0 * d * n.y
 		return out
 	}
+
+	/** Multiply V2 by a 2x2 matrix (4 elements) */
+	export function multM2 (out: V2, v: V2, m: ArrayLike<number>): V2 {
+		const x = v.x, y = v.y
+		out.x = m[0] * x + m[2] * y
+		out.y = m[1] * x + m[3] * y
+		return out
+	}
+
+	/** Multiply V2 by a 3x3 matrix (9 elements) */
+	export function multM3 (out: V2, v: V2, m: ArrayLike<number>): V2 {
+		const x = v.x, y = v.y
+		out.x = m[0] * x + m[3] * y + m[6]
+		out.y = m[1] * x + m[4] * y + m[7]
+		return out
+	}
 }
 
 export default V2

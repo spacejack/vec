@@ -25,5 +25,9 @@ declare namespace V2 {
     function rotate(out: V2, v: V2, r: number): V2;
     /** nx,ny should be normalized; vx,vy length will be preserved */
     function reflect(out: V2, v: V2, n: V2): V2;
+    /** Multiply V2 by a 2x2 matrix (4 elements) */
+    function multM2(out: V2, v: V2, m: ArrayLike<number>): V2;
+    /** Multiply V2 by a 3x3 matrix (9 elements) */
+    function multM3(out: V2, v: V2, m: ArrayLike<number>): V2;
 }
 export default V2;

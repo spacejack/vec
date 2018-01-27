@@ -116,5 +116,21 @@ var V2;
         return out;
     }
     V2.reflect = reflect;
+    /** Multiply V2 by a 2x2 matrix (4 elements) */
+    function multM2(out, v, m) {
+        var x = v.x, y = v.y;
+        out.x = m[0] * x + m[2] * y;
+        out.y = m[1] * x + m[3] * y;
+        return out;
+    }
+    V2.multM2 = multM2;
+    /** Multiply V2 by a 3x3 matrix (9 elements) */
+    function multM3(out, v, m) {
+        var x = v.x, y = v.y;
+        out.x = m[0] * x + m[3] * y + m[6];
+        out.y = m[1] * x + m[4] * y + m[7];
+        return out;
+    }
+    V2.multM3 = multM3;
 })(V2 || (V2 = {}));
 exports.default = V2;

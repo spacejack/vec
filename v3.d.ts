@@ -23,5 +23,9 @@ declare namespace V3 {
     function distSq(a: V3, b: V3): number;
     function dot(a: V3, b: V3): number;
     function cross(out: V3, a: V3, b: V3): V3;
+    /** Multiply V3 by a 3x3 matrix (9 elements) */
+    function multM3(out: V3, v: V3, m: ArrayLike<number>): V3;
+    /** Multiply V3 by a 4x4 matrix (16 elements) */
+    function multM4(out: V3, v: V3, m: ArrayLike<number>): V3;
 }
 export default V3;

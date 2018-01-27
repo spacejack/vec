@@ -119,6 +119,25 @@ namespace V3 {
 		out.z = ax * by - ay * bx
 		return out
 	}
+
+	/** Multiply V3 by a 3x3 matrix (9 elements) */
+	export function multM3 (out: V3, v: V3, m: ArrayLike<number>): V3 {
+		const x = v.x, y = v.y, z = v.z
+		out.x = x * m[0] + y * m[3] + z * m[6]
+		out.y = x * m[1] + y * m[4] + z * m[7]
+		out.z = x * m[2] + y * m[5] + z * m[8]
+		return out
+	}
+
+	/** Multiply V3 by a 4x4 matrix (16 elements) */
+	export function multM4 (out: V3, v: V3, m: ArrayLike<number>): V3 {
+		const x = v.x, y = v.y, z = v.z
+		const w = (m[3] * x + m[7] * y + m[11] * z + m[15]) || 1.0
+		out.x = (m[0] * x + m[4] * y + m[8] * z + m[12]) / w
+		out.y = (m[1] * x + m[5] * y + m[9] * z + m[13]) / w
+		out.z = (m[2] * x + m[6] * y + m[10] * z + m[14]) / w
+		return out
+	}
 }
 
 export default V3
