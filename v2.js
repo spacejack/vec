@@ -49,12 +49,12 @@ var V2;
         return out;
     }
     V2.sub = sub;
-    function multScalar(out, v, s) {
+    function scale(out, v, s) {
         out.x = v.x * s;
         out.y = v.y * s;
         return out;
     }
-    V2.multScalar = multScalar;
+    V2.scale = scale;
     function length(v) {
         return Math.sqrt(v.x * v.x + v.y * v.y);
     }

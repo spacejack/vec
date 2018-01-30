@@ -59,7 +59,7 @@ namespace V3 {
 		return out
 	}
 
-	export function multScalar (out: V3, v: V3, s: number): V3 {
+	export function scale (out: V3, v: V3, s: number): V3 {
 		out.x = v.x * s
 		out.y = v.y * s
 		out.z = v.z * s

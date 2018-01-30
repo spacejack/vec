@@ -13,7 +13,7 @@ declare namespace V2 {
     function fromArray(out: V2, a: ArrayLike<number>): V2;
     function add(out: V2, a: V2, b: V2): V2;
     function sub(out: V2, a: V2, b: V2): V2;
-    function multScalar(out: V2, v: V2, s: number): V2;
+    function scale(out: V2, v: V2, s: number): V2;
     function length(v: V2): number;
     function lengthSq(v: V2): number;
     function setLength(out: V2, v: V2, l: number): V2;

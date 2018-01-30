@@ -56,13 +56,13 @@ var V3;
         return out;
     }
     V3.sub = sub;
-    function multScalar(out, v, s) {
+    function scale(out, v, s) {
         out.x = v.x * s;
         out.y = v.y * s;
         out.z = v.z * s;
         return out;
     }
-    V3.multScalar = multScalar;
+    V3.scale = scale;
     function length(v) {
         return Math.sqrt(v.x * v.x + v.y * v.y + v.z * v.z);
     }
