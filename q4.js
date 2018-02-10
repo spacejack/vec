@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var v3_1 = require("./v3");
 var EPS = 0.000001;
 // Scratchpad objects
-var _v0 = v3_1.default.create(0, 0, 0);
-var _v1 = v3_1.default.create(0, 0, 0);
+var _v0 = v3_1.default.create(0, 0, 0); // tslint:disable-line variable-name
+var _v1 = v3_1.default.create(0, 0, 0); // tslint:disable-line variable-name
 var Q4;
 (function (Q4) {
     function create(x, y, z, w) {
@@ -71,25 +71,25 @@ var Q4;
     /** Get angle around X */
     function angleX(q) {
         // transform a vector by the quaternion, then get its angle from y,z
-        _v0.x = 0.0;
-        _v0.y = -1.0;
-        _v0.z = 0.0;
+        _v0.x = 0;
+        _v0.y = -1;
+        _v0.z = 0;
         multV3(_v1, q, _v0);
         return angle(_v1.y, _v1.z);
     }
     Q4.angleX = angleX;
     function angleY(q) {
-        _v0.x = 1.0;
-        _v0.y = 0.0;
-        _v0.z = 0.0;
+        _v0.x = 1;
+        _v0.y = 0;
+        _v0.z = 0;
         multV3(_v1, q, _v0);
         return angle(_v1.x, _v1.z);
     }
     Q4.angleY = angleY;
     function angleZ(q) {
-        _v0.x = 1.0;
-        _v0.y = 0.0;
-        _v0.z = 0.0;
+        _v0.x = 1;
+        _v0.y = 0;
+        _v0.z = 0;
         multV3(_v1, q, _v0);
         return angle(_v1.x, _v1.y);
     }

@@ -33,10 +33,10 @@ var C3;
     }
     C3.toHex = toHex;
     function fromHex(out, hex) {
-        hex = Math.floor(hex);
-        out.r = (hex >> 16 & 255) / 255;
-        out.g = (hex >> 8 & 255) / 255;
-        out.b = (hex & 255) / 255;
+        var h = Math.floor(hex);
+        out.r = (h >> 16 & 255) / 255;
+        out.g = (h >> 8 & 255) / 255;
+        out.b = (h & 255) / 255;
         return out;
     }
     C3.fromHex = fromHex;

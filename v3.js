@@ -73,7 +73,7 @@ var V3;
     V3.lengthSq = lengthSq;
     function setLength(out, v, l) {
         var s = length(v);
-        if (s > 0.0) {
+        if (s > 0) {
             s = l / s;
             out.x = v.x * s;
             out.y = v.y * s;
@@ -81,14 +81,14 @@ var V3;
         }
         else {
             out.x = l;
-            out.y = 0.0;
-            out.z = 0.0;
+            out.y = 0;
+            out.z = 0;
         }
         return out;
     }
     V3.setLength = setLength;
     function normalize(out, v) {
-        return setLength(out, v, 1.0);
+        return setLength(out, v, 1);
     }
     V3.normalize = normalize;
     function dist(a, b) {
@@ -129,7 +129,7 @@ var V3;
     /** Multiply V3 by a 4x4 matrix (16 elements) */
     function multM4(out, v, m) {
         var x = v.x, y = v.y, z = v.z;
-        var w = (m[3] * x + m[7] * y + m[11] * z + m[15]) || 1.0;
+        var w = (m[3] * x + m[7] * y + m[11] * z + m[15]) || 1;
         out.x = (m[0] * x + m[4] * y + m[8] * z + m[12]) / w;
         out.y = (m[1] * x + m[5] * y + m[9] * z + m[13]) / w;
         out.z = (m[2] * x + m[6] * y + m[10] * z + m[14]) / w;

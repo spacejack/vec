@@ -76,21 +76,21 @@ namespace V3 {
 
 	export function setLength (out: V3, v: V3, l: number): V3 {
 		let s = length(v)
-		if (s > 0.0) {
+		if (s > 0) {
 			s = l / s
 			out.x = v.x * s
 			out.y = v.y * s
 			out.z = v.z * s
 		} else {
 			out.x = l
-			out.y = 0.0
-			out.z = 0.0
+			out.y = 0
+			out.z = 0
 		}
 		return out
 	}
 
 	export function normalize (out: V3, v: V3): V3 {
-		return setLength(out, v, 1.0)
+		return setLength(out, v, 1)
 	}
 
 	export function dist (a: V3, b: V3): number {
@@ -132,7 +132,7 @@ namespace V3 {
 	/** Multiply V3 by a 4x4 matrix (16 elements) */
 	export function multM4 (out: V3, v: V3, m: ArrayLike<number>): V3 {
 		const x = v.x, y = v.y, z = v.z
-		const w = (m[3] * x + m[7] * y + m[11] * z + m[15]) || 1.0
+		const w = (m[3] * x + m[7] * y + m[11] * z + m[15]) || 1
 		out.x = (m[0] * x + m[4] * y + m[8] * z + m[12]) / w
 		out.y = (m[1] * x + m[5] * y + m[9] * z + m[13]) / w
 		out.z = (m[2] * x + m[6] * y + m[10] * z + m[14]) / w

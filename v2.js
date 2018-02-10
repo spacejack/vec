@@ -5,7 +5,7 @@ var V2;
     function create(x, y) {
         return {
             x: typeof x === 'number' ? x : 0,
-            y: typeof y === 'number' ? y : 0,
+            y: typeof y === 'number' ? y : 0
         };
     }
     V2.create = create;
@@ -65,20 +65,20 @@ var V2;
     V2.lengthSq = lengthSq;
     function setLength(out, v, l) {
         var s = length(v);
-        if (s > 0.0) {
+        if (s > 0) {
             s = l / s;
             out.x = v.x * s;
             out.y = v.y * s;
         }
         else {
             out.x = l;
-            out.y = 0.0;
+            out.y = 0;
         }
         return out;
     }
     V2.setLength = setLength;
     function normalize(out, v) {
-        return setLength(out, v, 1.0);
+        return setLength(out, v, 1);
     }
     V2.normalize = normalize;
     function dist(a, b) {
@@ -111,8 +111,8 @@ var V2;
     /** nx,ny should be normalized; vx,vy length will be preserved */
     function reflect(out, v, n) {
         var d = dot(n, v);
-        out.x = v.x - 2.0 * d * n.x;
-        out.y = v.y - 2.0 * d * n.y;
+        out.x = v.x - 2 * d * n.x;
+        out.y = v.y - 2 * d * n.y;
         return out;
     }
     V2.reflect = reflect;

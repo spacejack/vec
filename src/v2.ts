@@ -7,7 +7,7 @@ namespace V2 {
 	export function create (x?: number, y?: number): V2 {
 		return {
 			x: typeof x === 'number' ? x : 0,
-			y: typeof y === 'number' ? y : 0,
+			y: typeof y === 'number' ? y : 0
 		}
 	}
 
@@ -67,19 +67,19 @@ namespace V2 {
 
 	export function setLength (out: V2, v: V2, l: number): V2 {
 		let s = length(v)
-		if (s > 0.0) {
+		if (s > 0) {
 			s = l / s
 			out.x = v.x * s
 			out.y = v.y * s
 		} else {
 			out.x = l
-			out.y = 0.0
+			out.y = 0
 		}
 		return out
 	}
 
 	export function normalize (out: V2, v: V2): V2 {
-		return setLength(out, v, 1.0)
+		return setLength(out, v, 1)
 	}
 
 	export function dist (a: V2, b: V2): number {
@@ -114,8 +114,8 @@ namespace V2 {
 	/** nx,ny should be normalized; vx,vy length will be preserved */
 	export function reflect (out: V2, v: V2, n: V2): V2 {
 		const d = dot(n, v)
-		out.x = v.x - 2.0 * d * n.x
-		out.y = v.y - 2.0 * d * n.y
+		out.x = v.x - 2 * d * n.x
+		out.y = v.y - 2 * d * n.y
 		return out
 	}
 

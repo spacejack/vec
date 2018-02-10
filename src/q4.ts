@@ -3,8 +3,8 @@ import V3 from './v3'
 const EPS = 0.000001
 
 // Scratchpad objects
-const _v0 = V3.create(0, 0, 0)
-const _v1 = V3.create(0, 0, 0)
+const _v0 = V3.create(0, 0, 0) // tslint:disable-line variable-name
+const _v1 = V3.create(0, 0, 0) // tslint:disable-line variable-name
 
 interface Q4 {
 	x: number
@@ -85,19 +85,19 @@ namespace Q4 {
 	/** Get angle around X */
 	export function angleX (q: Q4): number {
 		// transform a vector by the quaternion, then get its angle from y,z
-		_v0.x = 0.0; _v0.y = -1.0; _v0.z = 0.0
+		_v0.x = 0; _v0.y = -1; _v0.z = 0
 		multV3(_v1, q, _v0)
 		return angle(_v1.y, _v1.z)
 	}
 
 	export function angleY (q: Q4): number {
-		_v0.x = 1.0; _v0.y = 0.0; _v0.z = 0.0
+		_v0.x = 1; _v0.y = 0; _v0.z = 0
 		multV3(_v1, q, _v0)
 		return angle(_v1.x, _v1.z)
 	}
 
 	export function angleZ (q: Q4): number {
-		_v0.x = 1.0; _v0.y = 0.0; _v0.z = 0.0
+		_v0.x = 1; _v0.y = 0; _v0.z = 0
 		multV3(_v1, q, _v0)
 		return angle(_v1.x, _v1.y)
 	}
