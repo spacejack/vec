@@ -7,6 +7,7 @@ declare namespace V2 {
     function set(out: V2, x?: number, y?: number): V2;
     function copy(out: V2, v: V2): V2;
     function clone(v: V2): V2;
+    function equalish(a: V2, b: V2): boolean;
     function toArray<T extends {
         [n: number]: number;
     }>(out: T, v: V2): T;

@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var common_1 = require("./common");
 var v3_1 = require("./v3");
-var EPS = 0.000001;
 // Scratchpad objects
 var _v0 = v3_1.default.create(0, 0, 0); // tslint:disable-line variable-name
 var _v1 = v3_1.default.create(0, 0, 0); // tslint:disable-line variable-name
@@ -36,6 +36,10 @@ var Q4;
         return create(q.x, q.y, q.z, q.w);
     }
     Q4.clone = clone;
+    function equalish(a, b) {
+        return common_1.equalish(a.x, b.x) && common_1.equalish(a.y, b.y) && common_1.equalish(a.z, b.z) && common_1.equalish(a.w, b.w);
+    }
+    Q4.equalish = equalish;
     function inverse(out, q) {
         out.x = -q.x;
         out.y = -q.y;
@@ -163,6 +167,7 @@ var Q4;
         return out;
     }
     Q4.fromEuler = fromEuler;
+    var EPS = 0.000001;
     function fromUnitVectors(out, vFrom, vTo) {
         var v = _v0;
         var r = v3_1.default.dot(vFrom, vTo) + 1;

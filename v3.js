@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var common_1 = require("./common");
 var V3;
 (function (V3) {
     function create(x, y, z) {
@@ -28,6 +29,10 @@ var V3;
         return create(v.x, v.y, v.z);
     }
     V3.clone = clone;
+    function equalish(a, b) {
+        return common_1.equalish(a.x, b.x) && common_1.equalish(a.y, b.y) && common_1.equalish(a.z, b.z);
+    }
+    V3.equalish = equalish;
     function toArray(out, v) {
         out[0] = v.x;
         out[1] = v.y;

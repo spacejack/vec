@@ -8,6 +8,7 @@ declare namespace C3 {
     function set(out: C3, r?: number, g?: number, b?: number): C3;
     function copy(dst: C3, src: C3): C3;
     function clone(c: C3): C3;
+    function equalish(a: C3, b: C3): boolean;
     function toHex(c: C3): number;
     function fromHex(out: C3, hex: number): C3;
     function toHexString(c: C3): string;

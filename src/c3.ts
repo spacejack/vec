@@ -1,3 +1,5 @@
+import {equalish as eq} from './common'
+
 interface C3 {
 	r: number
 	g: number
@@ -29,6 +31,10 @@ namespace C3 {
 
 	export function clone (c: C3) {
 		return create(c.r, c.g, c.b)
+	}
+
+	export function equalish (a: C3, b: C3): boolean {
+		return eq(a.r, b.r) && eq(a.g, b.g) && eq(a.b, b.b)
 	}
 
 	export function toHex (c: C3) {

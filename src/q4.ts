@@ -1,6 +1,5 @@
+import {equalish as eq} from './common'
 import V3 from './v3'
-
-const EPS = 0.000001
 
 // Scratchpad objects
 const _v0 = V3.create(0, 0, 0) // tslint:disable-line variable-name
@@ -41,6 +40,10 @@ namespace Q4 {
 
 	export function clone (q: Q4): Q4 {
 		return create(q.x, q.y, q.z, q.w)
+	}
+
+	export function equalish (a: Q4, b: Q4): boolean {
+		return eq(a.x, b.x) && eq(a.y, b.y) && eq(a.z, b.z) && eq(a.w, b.w)
 	}
 
 	export function inverse (out: Q4, q: Q4): Q4 {
@@ -169,6 +172,8 @@ namespace Q4 {
 
 		return out
 	}
+
+	const EPS = 0.000001
 
 	export function fromUnitVectors (out: Q4, vFrom: V3, vTo: V3): Q4 {
 		const v = _v0

@@ -10,6 +10,7 @@ declare namespace Q4 {
     function set(out: Q4, x?: number, y?: number, z?: number, w?: number): Q4;
     function copy(out: Q4, q: Q4): Q4;
     function clone(q: Q4): Q4;
+    function equalish(a: Q4, b: Q4): boolean;
     function inverse(out: Q4, q: Q4): Q4;
     function mult(out: Q4, a: Q4, b: Q4): Q4;
     function multV3(out: V3, q: Q4, v: V3): V3;

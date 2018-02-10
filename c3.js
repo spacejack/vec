@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var common_1 = require("./common");
 var C3;
 (function (C3) {
     function create(r, g, b) {
@@ -28,6 +29,10 @@ var C3;
         return create(c.r, c.g, c.b);
     }
     C3.clone = clone;
+    function equalish(a, b) {
+        return common_1.equalish(a.r, b.r) && common_1.equalish(a.g, b.g) && common_1.equalish(a.b, b.b);
+    }
+    C3.equalish = equalish;
     function toHex(c) {
         return (c.r * 255) << 16 ^ (c.g * 255) << 8 ^ (c.b * 255) << 0;
     }

@@ -1,6 +1,6 @@
 {
   "name": "vec",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Typescript Vector structs and functions",
   "scripts": {
     "test": "ts-node --project ./test ./test/test.ts",
@@ -10,8 +10,8 @@
   "keywords": [],
   "author": "spacejack",
   "license": "ISC",
-  "devDependencies": {},
-  "dependencies": {
+  "devDependencies": {
+    "ospec": "^1.4.0",
     "ts-node": "^4.1.0",
     "tslint": "^5.9.1",
     "tslint-microsoft-contrib": "^5.0.2",

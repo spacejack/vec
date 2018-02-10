@@ -1,3 +1,5 @@
+import {equalish as eq} from './common'
+
 interface V2 {
 	x: number
 	y: number
@@ -25,6 +27,10 @@ namespace V2 {
 
 	export function clone (v: V2): V2 {
 		return create(v.x, v.y)
+	}
+
+	export function equalish (a: V2, b: V2): boolean {
+		return eq(a.x, b.x) && eq(a.y, b.y)
 	}
 
 	export function toArray<T extends {[n: number]: number}> (out: T, v: V2): T {
