@@ -33,17 +33,19 @@ var V3;
         return common_1.equalish(a.x, b.x) && common_1.equalish(a.y, b.y) && common_1.equalish(a.z, b.z);
     }
     V3.equalish = equalish;
-    function toArray(out, v) {
-        out[0] = v.x;
-        out[1] = v.y;
-        out[2] = v.z;
+    function toArray(out, v, offset) {
+        if (offset === void 0) { offset = 0; }
+        out[offset + 0] = v.x;
+        out[offset + 1] = v.y;
+        out[offset + 2] = v.z;
         return out;
     }
     V3.toArray = toArray;
-    function fromArray(out, a) {
-        out.x = a[0];
-        out.y = a[1];
-        out.z = a[2];
+    function fromArray(out, a, offset) {
+        if (offset === void 0) { offset = 0; }
+        out.x = a[offset + 0];
+        out.y = a[offset + 1];
+        out.z = a[offset + 2];
         return out;
     }
     V3.fromArray = fromArray;

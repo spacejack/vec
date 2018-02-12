@@ -37,17 +37,17 @@ namespace V3 {
 		return eq(a.x, b.x) && eq(a.y, b.y) && eq(a.z, b.z)
 	}
 
-	export function toArray<T extends {[n: number]: number}> (out: T, v: V3): T {
-		out[0] = v.x
-		out[1] = v.y
-		out[2] = v.z
+	export function toArray<T extends {[n: number]: number}> (out: T, v: V3, offset = 0): T {
+		out[offset + 0] = v.x
+		out[offset + 1] = v.y
+		out[offset + 2] = v.z
 		return out
 	}
 
-	export function fromArray (out: V3, a: ArrayLike<number>): V3 {
-		out.x = a[0]
-		out.y = a[1]
-		out.z = a[2]
+	export function fromArray (out: V3, a: ArrayLike<number>, offset = 0): V3 {
+		out.x = a[offset + 0]
+		out.y = a[offset + 1]
+		out.z = a[offset + 2]
 		return out
 	}
 

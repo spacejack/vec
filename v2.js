@@ -30,15 +30,17 @@ var V2;
         return common_1.equalish(a.x, b.x) && common_1.equalish(a.y, b.y);
     }
     V2.equalish = equalish;
-    function toArray(out, v) {
-        out[0] = v.x;
-        out[1] = v.y;
+    function toArray(out, v, offset) {
+        if (offset === void 0) { offset = 0; }
+        out[offset + 0] = v.x;
+        out[offset + 1] = v.y;
         return out;
     }
     V2.toArray = toArray;
-    function fromArray(out, a) {
-        out.x = a[0];
-        out.y = a[1];
+    function fromArray(out, a, offset) {
+        if (offset === void 0) { offset = 0; }
+        out.x = a[offset + 0];
+        out.y = a[offset + 1];
         return out;
     }
     V2.fromArray = fromArray;

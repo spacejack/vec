@@ -33,6 +33,22 @@ var C3;
         return common_1.equalish(a.r, b.r) && common_1.equalish(a.g, b.g) && common_1.equalish(a.b, b.b);
     }
     C3.equalish = equalish;
+    function toArray(out, c, offset) {
+        if (offset === void 0) { offset = 0; }
+        out[offset + 0] = c.r;
+        out[offset + 1] = c.g;
+        out[offset + 2] = c.b;
+        return out;
+    }
+    C3.toArray = toArray;
+    function fromArray(out, a, offset) {
+        if (offset === void 0) { offset = 0; }
+        out.r = a[offset + 0];
+        out.g = a[offset + 1];
+        out.b = a[offset + 2];
+        return out;
+    }
+    C3.fromArray = fromArray;
     function toHex(c) {
         return (c.r * 255) << 16 ^ (c.g * 255) << 8 ^ (c.b * 255) << 0;
     }
@@ -49,19 +65,5 @@ var C3;
         return ('000000' + toHex(c).toString(16)).slice(-6);
     }
     C3.toHexString = toHexString;
-    function toArray(out, c) {
-        out[0] = c.r;
-        out[1] = c.g;
-        out[2] = c.b;
-        return out;
-    }
-    C3.toArray = toArray;
-    function fromArray(out, a) {
-        out.r = a[0];
-        out.g = a[1];
-        out.b = a[2];
-        return out;
-    }
-    C3.fromArray = fromArray;
 })(C3 || (C3 = {}));
 exports.default = C3;

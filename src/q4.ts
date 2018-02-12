@@ -46,6 +46,22 @@ namespace Q4 {
 		return eq(a.x, b.x) && eq(a.y, b.y) && eq(a.z, b.z) && eq(a.w, b.w)
 	}
 
+	export function toArray<T extends {[n: number]: number}> (out: T, q: Q4, offset = 0) {
+		out[offset + 0] = q.x
+		out[offset + 1] = q.y
+		out[offset + 2] = q.z
+		out[offset + 3] = q.w
+		return out
+	}
+
+	export function fromArray (out: Q4, a: ArrayLike<number>, offset = 0) {
+		out.x = a[offset + 0]
+		out.y = a[offset + 1]
+		out.z = a[offset + 2]
+		out.w = a[offset + 3]
+		return out
+	}
+
 	export function inverse (out: Q4, q: Q4): Q4 {
 		out.x = -q.x; out.y = -q.y; out.z = -q.z; out.w = -q.w
 		return out

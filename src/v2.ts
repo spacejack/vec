@@ -33,15 +33,15 @@ namespace V2 {
 		return eq(a.x, b.x) && eq(a.y, b.y)
 	}
 
-	export function toArray<T extends {[n: number]: number}> (out: T, v: V2): T {
-		out[0] = v.x
-		out[1] = v.y
+	export function toArray<T extends {[n: number]: number}> (out: T, v: V2, offset = 0): T {
+		out[offset + 0] = v.x
+		out[offset + 1] = v.y
 		return out
 	}
 
-	export function fromArray (out: V2, a: ArrayLike<number>): V2 {
-		out.x = a[0]
-		out.y = a[1]
+	export function fromArray (out: V2, a: ArrayLike<number>, offset = 0): V2 {
+		out.x = a[offset + 0]
+		out.y = a[offset + 1]
 		return out
 	}
 

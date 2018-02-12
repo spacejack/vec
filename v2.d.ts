@@ -10,8 +10,8 @@ declare namespace V2 {
     function equalish(a: V2, b: V2): boolean;
     function toArray<T extends {
         [n: number]: number;
-    }>(out: T, v: V2): T;
-    function fromArray(out: V2, a: ArrayLike<number>): V2;
+    }>(out: T, v: V2, offset?: number): T;
+    function fromArray(out: V2, a: ArrayLike<number>, offset?: number): V2;
     function add(out: V2, a: V2, b: V2): V2;
     function sub(out: V2, a: V2, b: V2): V2;
     function scale(out: V2, v: V2, s: number): V2;

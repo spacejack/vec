@@ -11,6 +11,10 @@ declare namespace Q4 {
     function copy(out: Q4, q: Q4): Q4;
     function clone(q: Q4): Q4;
     function equalish(a: Q4, b: Q4): boolean;
+    function toArray<T extends {
+        [n: number]: number;
+    }>(out: T, q: Q4, offset?: number): T;
+    function fromArray(out: Q4, a: ArrayLike<number>, offset?: number): Q4;
     function inverse(out: Q4, q: Q4): Q4;
     function mult(out: Q4, a: Q4, b: Q4): Q4;
     function multV3(out: V3, q: Q4, v: V3): V3;

@@ -37,6 +37,20 @@ namespace C3 {
 		return eq(a.r, b.r) && eq(a.g, b.g) && eq(a.b, b.b)
 	}
 
+	export function toArray<T extends {[n: number]: number}> (out: T, c: C3, offset = 0) {
+		out[offset + 0] = c.r
+		out[offset + 1] = c.g
+		out[offset + 2] = c.b
+		return out
+	}
+
+	export function fromArray (out: C3, a: ArrayLike<number>, offset = 0) {
+		out.r = a[offset + 0]
+		out.g = a[offset + 1]
+		out.b = a[offset + 2]
+		return out
+	}
+
 	export function toHex (c: C3) {
 		return (c.r * 255) << 16 ^ (c.g * 255) << 8 ^ (c.b * 255) << 0
 	}
@@ -51,20 +65,6 @@ namespace C3 {
 
 	export function toHexString (c: C3) {
 		return ('000000' + toHex(c).toString(16)).slice(-6)
-	}
-
-	export function toArray<T extends {[n: number]: number}> (out: T, c: C3) {
-		out[0] = c.r
-		out[1] = c.g
-		out[2] = c.b
-		return out
-	}
-
-	export function fromArray (out: C3, a: ArrayLike<number>) {
-		out.r = a[0]
-		out.g = a[1]
-		out.b = a[2]
-		return out
 	}
 }
 

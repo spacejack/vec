@@ -11,8 +11,8 @@ declare namespace V3 {
     function equalish(a: V3, b: V3): boolean;
     function toArray<T extends {
         [n: number]: number;
-    }>(out: T, v: V3): T;
-    function fromArray(out: V3, a: ArrayLike<number>): V3;
+    }>(out: T, v: V3, offset?: number): T;
+    function fromArray(out: V3, a: ArrayLike<number>, offset?: number): V3;
     function add(out: V3, a: V3, b: V3): V3;
     function sub(out: V3, a: V3, b: V3): V3;
     function scale(out: V3, v: V3, s: number): V3;

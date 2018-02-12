@@ -40,6 +40,24 @@ var Q4;
         return common_1.equalish(a.x, b.x) && common_1.equalish(a.y, b.y) && common_1.equalish(a.z, b.z) && common_1.equalish(a.w, b.w);
     }
     Q4.equalish = equalish;
+    function toArray(out, q, offset) {
+        if (offset === void 0) { offset = 0; }
+        out[offset + 0] = q.x;
+        out[offset + 1] = q.y;
+        out[offset + 2] = q.z;
+        out[offset + 3] = q.w;
+        return out;
+    }
+    Q4.toArray = toArray;
+    function fromArray(out, a, offset) {
+        if (offset === void 0) { offset = 0; }
+        out.x = a[offset + 0];
+        out.y = a[offset + 1];
+        out.z = a[offset + 2];
+        out.w = a[offset + 3];
+        return out;
+    }
+    Q4.fromArray = fromArray;
     function inverse(out, q) {
         out.x = -q.x;
         out.y = -q.y;
